@@ -25,6 +25,10 @@ La aplicación utiliza componentes reutilizables, navegación mediante React Rou
 - **CSS3:** estilos personalizados y diseño responsive.
 - **Git y GitHub:** control de versiones y alojamiento del repositorio.
 
+## 🌐 Aplicación publicada
+
+[Ver Mercado Fresco en GitHub Pages](https://nebulosvs.github.io/supermercado-sofia-medina-PFY2202/)
+
 ## ✨ Funcionalidades
 
 ### 1. Página de inicio
