@@ -272,19 +272,6 @@ tbody tr:hover {
   font-size: 14px;
 }
 
-/* Enlace al detalle de productos */
-
-.enlace-producto {
-  color: #166534;
-  font-weight: 600;
-  text-decoration: none;
-}
-
-.enlace-producto:hover {
-  color: #16803c;
-  text-decoration: underline;
-}
-
 /* =========================================
    PÁGINAS INFORMATIVAS
 ========================================= */

@@ -1,7 +1,19 @@
+
 import { useInventario } from '../context/InventarioContext'
+import TablaInventario from '../components/TablaInventario'
 
 function Home() {
   const { productos } = useInventario()
+
+  const totalUnidades = productos.reduce(
+    (total, producto) => total + producto.stock,
+    0
+  )
+
+  const productosStockBajo = productos.filter(
+    (producto) => producto.stock > 0 && producto.stock <= 10
+  ).length
+
   return (
     <section className="home">
       <div className="hero">
@@ -21,16 +33,12 @@ function Home() {
 
         <div className="resumen-card">
           <span>Unidades disponibles</span>
-          <strong>
-            {productos.reduce((total, producto) => total + producto.stock, 0)}
-          </strong>
+          <strong>{totalUnidades}</strong>
         </div>
 
         <div className="resumen-card">
           <span>Stock bajo</span>
-          <strong>
-            {productos.filter((producto) => producto.stock <= 10).length}
-          </strong>
+          <strong>{productosStockBajo}</strong>
         </div>
       </div>
 
@@ -44,43 +52,7 @@ function Home() {
           <span>{productos.length} productos</span>
         </div>
 
-        <div className="tabla-contenedor">
-          <table>
-            <thead>
-              <tr>
-                <th>Producto</th>
-                <th>Categoría</th>
-                <th>Precio</th>
-                <th>Stock</th>
-                <th>Estado</th>
-              </tr>
-            </thead>
-
-            <tbody>
-              {productos.map((producto) => (
-                <tr key={producto.id}>
-                  <td>{producto.nombre}</td>
-                  <td>{producto.categoria}</td>
-                  <td>${producto.precio.toLocaleString('es-CL')}</td>
-                  <td>{producto.stock}</td>
-                  <td>
-                    <span
-                      className={
-                        producto.stock <= 10
-                          ? 'estado stock-bajo'
-                          : 'estado disponible'
-                      }
-                    >
-                      {producto.stock <= 10
-                        ? 'Stock bajo'
-                        : 'Disponible'}
-                    </span>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
+        <TablaInventario productos={productos} />
       </div>
     </section>
   )
