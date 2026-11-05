@@ -13,6 +13,8 @@ function Footer() {
           <NavLink to="/">Inicio</NavLink>
           <NavLink to="/nosotros">Quiénes somos</NavLink>
           <NavLink to="/contacto">Contáctanos</NavLink>
+          <NavLink to="/inventario">Inventario</NavLink>
+          <NavLink to="/agregar-producto">Agregar producto</NavLink>
         </nav>
       </div>
 

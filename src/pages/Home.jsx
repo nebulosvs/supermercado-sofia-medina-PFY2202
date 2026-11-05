@@ -1,49 +1,7 @@
-const productos = [
-  {
-    id: 1,
-    nombre: 'Leche Entera',
-    categoria: 'Lácteos',
-    precio: 1290,
-    stock: 24,
-  },
-  {
-    id: 2,
-    nombre: 'Pan de Molde',
-    categoria: 'Panadería',
-    precio: 2190,
-    stock: 15,
-  },
-  {
-    id: 3,
-    nombre: 'Arroz 1 kg',
-    categoria: 'Despensa',
-    precio: 1690,
-    stock: 32,
-  },
-  {
-    id: 4,
-    nombre: 'Manzanas',
-    categoria: 'Frutas y Verduras',
-    precio: 1990,
-    stock: 18,
-  },
-  {
-    id: 5,
-    nombre: 'Aceite Vegetal',
-    categoria: 'Despensa',
-    precio: 2490,
-    stock: 8,
-  },
-  {
-    id: 6,
-    nombre: 'Café Instantáneo',
-    categoria: 'Bebidas',
-    precio: 3990,
-    stock: 5,
-  },
-]
+import { useInventario } from '../context/InventarioContext'
 
 function Home() {
+  const { productos } = useInventario()
   return (
     <section className="home">
       <div className="hero">
